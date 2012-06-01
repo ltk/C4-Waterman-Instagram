@@ -1,0 +1,172 @@
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+<style type="text/css">
+body{font-family:'Yanone Kaffeesatz', sans-serif;font-size:1.3em;}div.container{background:#21201e;-webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;width:794px;padding-top:17px;padding-bottom:17px;}div.entry{width:242px;margin:0 17px 17px 0;float:left;}div.entry.first{margin-left:17px;}a.entry_title{height:25px;color:#ccc;text-decoration:none;text-align:center;font-size:12px;width:100%;display:none;}div.entry_content img{width:242px;-webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;-webkit-box-shadow:0 0 3px 4px #333;-moz-box-shadow:0 0 3px 4px #333;box-shadow:0 0 3px 4px #333;}div.fb-comments{display:block;margin-top:10px;width:100%;margin:0 17px 0 17px;}div.photos{clear:both;}h2{color:#666;width:794px;display:block;padding-left:17px;margin-bottom:10px;font-size:1.7em;}h3{padding:0 17px;color:#999;font-weight:normal;font-size:1.4em;}h3 span.c4-hashtag{color:#fff;font-size:1.6em;font-weight:bold;}h4{padding:0 17px;color:#fff;margin:5px 0;}img.logos{padding:0 17px;}#how-to{padding:0 17px;clear:both;}#video{float:left;}#directions{float:left;margin-left:15px;}a.attribution{font-family:arial, sans-serif;text-decoration:none;color:#444;font-size:0.7em;display:block;text-align:center;margin-top:15px;}a.attribution:hover strong{color:#999;}
+<%#
+html{
+    /*overflow:hidden;*/
+}
+body {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+    /*overflow:hidden;*/
+    font-size:1.3em;
+}
+div.container {
+    background:#21201e;
+    border-radius:7px;
+    width:794px;
+    padding-top:17px;
+    padding-bottom:17px;
+}
+div.entry {
+	width:242px;
+	margin:0 17px 17px 0;
+	float:left;
+}
+div.entry.first {
+margin-left:17px;
+}
+a.entry_title {
+	height:25px;
+    color:#ccc;
+    text-decoration:none;
+    text-align:center;
+    font-size:12px;
+    width:100%;
+    display:none;
+}
+div.entry_content img {
+	width:242px;
+    border-radius:7px;
+    box-shadow:0 0 3px 4px #333;;
+    
+}
+div.fb-comments {
+    display:block;
+    margin-top:10px;
+    width:100%;
+    margin:0 17px 0 17px;
+}
+div.photos {
+    clear:both;
+}
+h2 {
+    color:#666;
+    width:794px;
+    display:block;
+    padding-left:17px;
+    margin-bottom:10px;
+    font-size:1.7em;
+}
+h3{
+    padding:0 17px;
+    color:#999;
+    font-weight:normal;
+    font-size:1.4em;
+}
+h3 span.c4-hashtag {
+    color:#fff;
+    font-size:1.6em;
+    font-weight:bold;
+}
+h4{
+    padding:0 17px;
+    color:#fff;
+    margin:5px 0;
+}
+img.logos {
+    padding:0 17px;
+}
+#how-to{
+    padding:0 17px;
+    clear:both;
+}
+#video{
+    float:left;
+}
+#directions {
+    float:left;
+    margin-left:15px;
+}
+a.attribution{
+    font-family:arial, sans-serif;
+    text-decoration:none;
+    color:#444;
+    font-size:0.7em;
+    display:block;
+    text-align:center;
+    margin-top:15px;
+}
+a.attribution:hover strong{
+    color:#999;
+}
+%>
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32326709-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>	
+</head>
+<body>
+    <div class="container">
+	<div id="fb-root"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=141363015988055";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<img class="logos" src="http://teva.elements.ca2plus.com/img/logos.jpg" alt="C4 Instasup Shoot Off" />
+<h3>Share your best Instagram photos of you flashing the C4 Waterman sign and tag them with the hashtag <span class="c4-hashtag">#C4TMG</span></h3>
+<div id="how-to">
+    <div id="video">
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/sAuVII63_FM" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="directions">
+        <h4>1. Flash the C4 Sign</h4>
+        <h4>2. Upload your image</h4>
+        <h4>3. Tag it with #C4TMG</h4>
+        <h4>4. Keep Shooting!</h4>
+    </div>
+    <br style="clear:both;" />
+</div>
+
+<h2>The Shots</h2>
+<div class="photos">
+<% @photos.each do |photo| %>
+  <div class="entry <% if photo.first %>first<% end %>">
+  	<div class="entry_content">
+  		<img src="<%= photo.src %>"/>
+  	</div>
+  	<a class="entry_title" href="<%= photo.src %>"><%= photo.caption %></a>
+  </div>
+<% end %>
+<br style="clear:both;" />
+</div>
+
+<h2>The Comments</h2>
+<div class="fb-comments" data-href="www.facebook.com/c4watermanfan" data-num-posts="10" data-width="760" data-colorscheme="dark"></div>
+
+<a class="attribution" href="http://ca2plus.com/" target="_parent" title="Calcium Internet Engineering">Engineered by <strong>Ca<sup>2+</sup></strong></a>
+</div>
+
+
+<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript" charset="utf-8">
+    FB.Canvas.setAutoResize(50);
+</script>
+</body>
+</html>

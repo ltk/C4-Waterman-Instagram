@@ -19,6 +19,7 @@ class Photo
 end
 
 class XmlPhotoFeed
+  # yeah, this probably shouldn't be a class variable...
 	@@photos = Array.new
 
 	def initialize(url)
@@ -29,9 +30,12 @@ class XmlPhotoFeed
 		# extract event information
 		doc = REXML::Document.new(xml_data)
 
-		# extract the photo src
+		# for some reason lines 37-40 were executing 2-4 times per request... why?
+    # I stopped it by checking for objects in the @@photos array
 		if @@photos.count == 0
 			count = 3
+      
+      # extract the photo src
 			doc.elements.each('rss/channel/item/link') do |ele|
 	   			@@photos << Photo.new(ele.text, 'No caption for now.', count)
 	   			count+=1
@@ -51,14 +55,10 @@ get "/" do
   erb :index
 end
 
+# This is repetitive... how can I combine this with the above?
 post "/" do
   feed = XmlPhotoFeed.new('http://instagr.am/tags/c4tmg/feed/recent.rss')
   @title = 'C4 Insasup Shoot Off'
   @photos = feed.photos
   erb :index
-end
-
-# For Blitz.io testing
-get '/mu-038eb2ef-c73eb45b-801e0f12-e3372c7d' do
-  '42'
 end

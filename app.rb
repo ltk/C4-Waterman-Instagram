@@ -30,8 +30,8 @@ class XmlPhotoFeed
 		# extract event information
 		doc = REXML::Document.new(xml_data)
 
-		# for some reason lines 37-40 were executing 2-4 times per request... why?
-    # I stopped it by checking for objects in the @@photos array
+		# for some reason lines 39-42 were executing 2-4 times per request... why?
+    		# I stopped it by checking for objects in the @@photos array
 		if @@photos.count == 0
 			count = 3
       
